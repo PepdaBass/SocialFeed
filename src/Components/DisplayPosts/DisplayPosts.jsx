@@ -5,10 +5,17 @@ const DisplayPosts = (props) => {
         <table>
             {props.parentPosts.map((post, i) => {
                 return (
-                    <tbody>
-                    <tr>Name: {post.userName}</tr>
-                    <tr>Post: {post.content}</tr>
-                    <tr><button type="button">Like</button><button type="button">dislike</button></tr>
+                    <tbody key={i}>
+                    <tr>
+                        <td>Name: {post.userName}<br /></td>
+                    </tr>
+                    <tr>
+                        <td>Post: {post.content}<br /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Like</label><input type="checkbox"/>
+                        <label>Dislike</label><input type="checkbox"/></td>
+                    </tr>
                     </tbody>
                 )  
             })}
