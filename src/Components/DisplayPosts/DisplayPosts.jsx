@@ -1,6 +1,14 @@
+import React, { useState } from 'react';
 
 
 const DisplayPosts = (props) => {
+
+    const [likeStatus, setLikeStatus] = useState("");
+    
+    function updateLikeStatus(newStatus){
+        setLikeStatus(newStatus);
+    }
+
     return ( 
         <table>
             {props.parentPosts.map((post, i) => {
@@ -13,9 +21,10 @@ const DisplayPosts = (props) => {
                         <td>Post: {post.content}<br /></td>
                     </tr>
                     <tr>
-                        <td><label>Like</label><input type="checkbox"/>
-                        <label>Dislike</label><input type="checkbox"/></td>
+                        <td><button onClick={() => updateLikeStatus("liked!")}>like</button>
+                        <button onClick={() => updateLikeStatus("disliked!")}>dislike</button></td>
                     </tr>
+                    <tr>Post {likeStatus}</tr>
                     </tbody>
                 )  
             })}
