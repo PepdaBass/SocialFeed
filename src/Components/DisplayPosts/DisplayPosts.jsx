@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import Post from '../Post/Post';
 
 
-const DisplayPosts = (props) => {
+const DisplayPosts = ({parentPosts}) => {
 
     const [likeStatus, setLikeStatus] = useState("");
     
@@ -10,25 +11,13 @@ const DisplayPosts = (props) => {
     }
 
     return ( 
-        <table>
-            {props.parentPosts.map((post, i) => {
-                return (
-                    <tbody key={i}>
-                    <tr>
-                        <td>Name: {post.userName}<br /></td>
-                    </tr>
-                    <tr>
-                        <td>Post: {post.content}<br /></td>
-                    </tr>
-                    <tr>
-                        <td><button onClick={() => updateLikeStatus("liked!")}>like</button>
-                        <button onClick={() => updateLikeStatus("disliked!")}>dislike</button></td>
-                    </tr>
-                    <tr>Post {likeStatus}</tr>
-                    </tbody>
-                )  
-            })}
-        </table>
+       <div>
+           {parentPosts.map((post, i) => {
+               return (
+                   <Post key={i} userName = {post.userName} content = {post.content} />
+               )
+           })}
+       </div>
      );
 }
  

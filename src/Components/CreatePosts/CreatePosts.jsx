@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./CreatePosts.css"
 
 const CreatePosts = (props) => {
 
@@ -16,15 +17,19 @@ const CreatePosts = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
-            <div>
-                <label>Username</label>
-                <input type="text" value={userName} onChange={(event) => setUserName(event.target.value)} />
+            <div className="container-fluid bg-secondary">
+                <div className="create_name">
+                    <label><strong>Username</strong></label>
+                    <input type="text" value={userName} onChange={(event) => setUserName(event.target.value)} />
+                </div>
+                <div className="create_content">
+                    <label><strong>Content</strong></label>
+                    <textarea type="text" value={content} onChange={(event) => setContent(event.target.value)} />
+                </div>
+                <div className="create_button">
+                    <button type="submit" className="btn btn-success">POST</button>
+                </div>
             </div>
-            <div>
-                <label>Post</label>
-                <input type="text" value={content} onChange={(event) => setContent(event.target.value)} />
-            </div>
-            <button type="submit">POST</button>
         </form>
      );
 }

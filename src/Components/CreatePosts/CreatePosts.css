@@ -1,0 +1,47 @@
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+.create_name {
+    padding: 0.5em;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create_name input {
+    width: 100%;
+}
+
+.create_name label {
+    margin: 2px;
+}
+
+.create_content {
+    padding: 0.5em;
+    width: 500px;
+    height: 200px;
+    display: flex; 
+    flex-direction: column;
+}
+
+.create_content label {
+    margin: 2px;
+}
+
+.create_content textarea {
+    width: 100%;
+    height: 90%;
+}
+
+.create_button {
+    padding: 0.5em;
+    width: 500px;
+}
